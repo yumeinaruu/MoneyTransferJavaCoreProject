@@ -1,4 +1,4 @@
-import FileProcessing.ParseInputFiles;
+import fileProcessing.ParseInputFiles;
 
 import java.util.Scanner;
 
