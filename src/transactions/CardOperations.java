@@ -23,7 +23,7 @@ public class CardOperations {
                 fileReport.makeFileReport(filename, cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Not enough money.");
                 throw new NotEnoughMoneyException();
             } else if (moneyAmount <= 0) {
-                fileReport.makeFileReport(filename,cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
+                fileReport.makeFileReport(filename, cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
                         "amount of money");
                 throw new UnsufficientAmountException();
             } else if (Objects.equals(cardNumberFrom, cardInfo.keySet().toString())) {
