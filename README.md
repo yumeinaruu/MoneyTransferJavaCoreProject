@@ -89,4 +89,4 @@ An example of an output report file:
 **Donations**
 ---
 
-This is free, open-source software.
+Software is distributed by [GNU GPL](https://www.gnu.org/licenses/gpl-3.0.txt)
