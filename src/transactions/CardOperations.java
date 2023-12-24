@@ -19,20 +19,24 @@ public class CardOperations {
     private CardInfoFile cardInfoFile = new CardInfoFile();
 
     public void transferMoney(String cardNumberFrom, String cardNumberOn, int moneyAmount) throws IOException {
-        if (moneyAmount > cardInfo.get(cardNumberFrom)) {
-            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Not enough money.");
-            throw new NotEnoughMoneyException();
-        } else if (moneyAmount <= 0) {
-            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
-                    "amount of money");
-            throw new UnsufficientAmountException();
-        } else if (Objects.equals(cardNumberFrom, cardInfo.keySet().toString())) {
+        try {
+            if (moneyAmount > cardInfo.get(cardNumberFrom)) {
+                fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Not enough money.");
+                throw new NotEnoughMoneyException();
+            } else if (moneyAmount <= 0) {
+                fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
+                        "amount of money");
+                throw new UnsufficientAmountException();
+            } else if (Objects.equals(cardNumberFrom, cardInfo.keySet().toString())) {
 
-        } else {
-            cardInfo.replace(cardNumberFrom, cardInfo.get(cardNumberFrom) - moneyAmount);
-            cardInfo.replace(cardNumberOn, cardInfo.get(cardNumberOn) + moneyAmount);
-            cardInfoFile.cardInfoFileUpdate(cardInfo);
-            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer completed successfully");
+            } else {
+                cardInfo.replace(cardNumberFrom, cardInfo.get(cardNumberFrom) - moneyAmount);
+                cardInfo.replace(cardNumberOn, cardInfo.get(cardNumberOn) + moneyAmount);
+                cardInfoFile.cardInfoFileUpdate(cardInfo);
+                fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer completed successfully");
+            }
+        } catch (NotEnoughMoneyException | UnsufficientAmountException e) {
+            System.out.println(e);
         }
     }
 }

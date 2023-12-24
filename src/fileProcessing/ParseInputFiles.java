@@ -43,14 +43,18 @@ public class ParseInputFiles {
                         cardNumberOn.append(matcher.group());
                     }
                     cardNumberOn.deleteCharAt(0);
-                    pattern = Pattern.compile("/\\d+\r\n");
+                    pattern = Pattern.compile("/-?\\d+\r\n");
                     matcher = pattern.matcher(stringBuilder);
                     StringBuilder cardTransferValue = new StringBuilder();
                     while (matcher.find()) {
                         cardTransferValue.append(matcher.group());
                     }
-                    cardTransferValue.deleteCharAt(0);
-                    cardTransferValue.delete(cardTransferValue.length() - 2, cardTransferValue.length());
+                    try {
+                        cardTransferValue.deleteCharAt(0);
+                        cardTransferValue.delete(cardTransferValue.length() - 2, cardTransferValue.length());
+                    } catch (Exception e){
+
+                    }
                     //cardInfoFromTr.put(cardNumberFrom.toString(), Integer.parseInt(cardTransferValue.toString()));
                     //cardInfoOnTr.put(cardNumberOn.toString(), Integer.parseInt(cardTransferValue.toString()));
                     ParseCardInfoFile.parseCardInfoFile();
