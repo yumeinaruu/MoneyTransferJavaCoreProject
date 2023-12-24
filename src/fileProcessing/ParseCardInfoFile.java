@@ -19,26 +19,37 @@ public class ParseCardInfoFile {
 
     public static void parseCardInfoFile() throws FileNotFoundException {
         try (FileReader fileReader = new FileReader(cardInfoFile)) {
-            StringBuilder stringBuilder = new StringBuilder();
-            int character;
-            while ((character = fileReader.read()) != -1) {
-                stringBuilder.append((char) character);
+            if(cardInfo.isEmpty()) {
+                StringBuilder stringBuilder = new StringBuilder();
+                int character;
+                while ((character = fileReader.read()) != -1) {
+                    stringBuilder.append((char) character);
+                }
+                Pattern pattern = Pattern.compile("/\\d+\n");
+                Matcher matcher = pattern.matcher(stringBuilder);
+                StringBuilder cardBalanceValue = new StringBuilder();
+                while (matcher.find()) {
+                    cardBalanceValue.append(matcher.group());
+                }
+                cardBalanceValue.deleteCharAt(0);
+                cardBalanceValue.deleteCharAt(cardBalanceValue.length() - 1);
+                String[] cardBalanceString = cardBalanceValue.toString().split("\n/");
+                cardBalanceValue.delete(cardBalanceValue.length() - 2, cardBalanceValue.length());
+                pattern = Pattern.compile("\\d{5}-\\d{5}");
+                matcher = pattern.matcher(stringBuilder);
+                StringBuilder cardNumber = new StringBuilder();
+                while (matcher.find()) {
+                    cardNumber.append(matcher.group());
+                    cardNumber.append(" ");
+                }
+                String[] cardNumberString = cardNumber.toString().split(" ");
+                for (int i = 0; i < cardBalanceString.length; i++) {
+                    cardInfo.put(cardNumberString[i], Integer.parseInt(cardBalanceString[i]));
+                }
+                System.out.println(cardInfo);
+            } else{
+                System.out.println(cardInfo);
             }
-            Pattern pattern = Pattern.compile("/\\d+\r\n");
-            Matcher matcher = pattern.matcher(stringBuilder);
-            StringBuilder cardBalanceValue = new StringBuilder();
-            while (matcher.find()) {
-                cardBalanceValue.append(matcher.group());
-            }
-            cardBalanceValue.deleteCharAt(0);
-            cardBalanceValue.delete(cardBalanceValue.length() - 2, cardBalanceValue.length());
-            pattern = Pattern.compile("\\d{5}-\\d{5}");
-            matcher = pattern.matcher(stringBuilder);
-            StringBuilder cardNumber = new StringBuilder();
-            while (matcher.find()) {
-                cardNumber.append(matcher.group());
-            }
-            cardInfo.put(cardNumber.toString(), Integer.parseInt(cardBalanceValue.toString()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

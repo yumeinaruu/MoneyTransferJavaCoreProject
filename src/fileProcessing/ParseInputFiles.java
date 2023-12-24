@@ -51,6 +51,7 @@ public class ParseInputFiles {
                     cardTransferValue.delete(cardTransferValue.length() - 2, cardTransferValue.length());
                     //cardInfoFromTr.put(cardNumberFrom.toString(), Integer.parseInt(cardTransferValue.toString()));
                     //cardInfoOnTr.put(cardNumberOn.toString(), Integer.parseInt(cardTransferValue.toString()));
+                    ParseCardInfoFile.parseCardInfoFile();
                     CardOperations cardOperations = new CardOperations();
                     cardOperations.transferMoney(cardNumberFrom.toString(), cardNumberOn.toString(), Integer.parseInt(cardTransferValue.toString()));
                     fileReader.close();

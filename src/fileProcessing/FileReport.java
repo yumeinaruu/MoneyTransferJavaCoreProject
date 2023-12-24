@@ -16,10 +16,10 @@ public class FileReport {
     File file = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\ReportFile.txt");
 
     public void makeFileReport(/*String filename,*/ String cardInfoFrom, String cardInfoOn, int moneyAmount, int status) throws IOException {
-        try(FileWriter fileWriter = new FileWriter(file)){
+        try(FileWriter fileWriter = new FileWriter(file, true)){
             fileWriter.write(LocalDateTime.now() + " | transferred from " + cardInfoFrom
                     + " | transferred to " + cardInfoOn + " | " + moneyAmount
-            + " | " + status);
+            + " | " + status + "\n");
         } catch (Exception e){
             e.printStackTrace();
         }
