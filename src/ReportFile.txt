@@ -62,3 +62,11 @@
 2023-12-24T17:34:56.551524400|src\input\BankCardInputInfoFourth.txt | transferred from 12345-76845 | transferred to 15674-90875 | -50 | Transfer Failed. Non-sufficient amount of money
 2023-12-24T17:34:56.552524200|src\input\BankCardInputInfoSecond.txt | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer Failed. Not enough money.
 2023-12-24T17:34:56.553520700|src\input\BankCardInputInfoThird.txt | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer Failed. Not enough money.
+2023-12-24T18:06:59.500217300|src\input\BankCardInputInfoFirst.txt | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T18:06:59.513215800|src\input\BankCardInputInfoFourth.txt | transferred from 12345-76845 | transferred to 15674-90875 | -50 | Transfer Failed. Non-sufficient amount of money
+2023-12-24T18:06:59.513690500|src\input\BankCardInputInfoSecond.txt | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T18:06:59.514712500|src\input\BankCardInputInfoThird.txt | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number
+2023-12-24T18:07:57.999247700|src\input\BankCardInputInfoFirst.txt | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T18:07:58.012326900|src\input\BankCardInputInfoFourth.txt | transferred from 12345-76845 | transferred to 15674-90875 | -50 | Transfer Failed. Non-sufficient amount of money
+2023-12-24T18:07:58.013470500|src\input\BankCardInputInfoSecond.txt | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T18:07:58.014500300|src\input\BankCardInputInfoThird.txt | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number
