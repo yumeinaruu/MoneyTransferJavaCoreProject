@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ReportFileDisplay {
-    File file = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\ReportFile.txt");
+    File file = new File("src/ReportFile.txt");
 
     public void showReport() {
         try (FileReader fileReader = new FileReader(file)) {

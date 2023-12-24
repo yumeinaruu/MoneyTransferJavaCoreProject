@@ -14,7 +14,7 @@ import transactions.CardOperations;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class ParseInputFiles {
-    private File folder = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\input");
+    private File folder = new File("src/input");
     private File[] listOfFiles = folder.listFiles();
     // private static HashMap<String, Integer> cardInfoFromTr = new HashMap<>();
     // private static HashMap<String, Integer> cardInfoOnTr = new HashMap<>();
@@ -82,8 +82,8 @@ public class ParseInputFiles {
 
     public void moveToArchive() {
         Path result = null;
-        Path source = Paths.get("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\input");
-        Path destination = Paths.get("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\archive");
+        Path source = Paths.get("src/input");
+        Path destination = Paths.get("src/archive");
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(source)) {
             for (Path path : directoryStream) {
                 Path d2 = destination.resolve(path.getFileName());

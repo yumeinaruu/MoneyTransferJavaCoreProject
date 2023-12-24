@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class CardInfoFile {
-    private File file = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\CardInfoFile.txt");
+    private File file = new File("src/CardInfoFile.txt");
 
     public void cardInfoFileUpdate(HashMap<String, Integer> hashMap) throws IOException {
         try (FileWriter fileWriter = new FileWriter(file)) {

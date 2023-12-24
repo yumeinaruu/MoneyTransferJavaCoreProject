@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ParseCardInfoFile {
-    private static final File cardInfoFile = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\CardInfoFile.txt");
+    private static final File cardInfoFile = new File("src/CardInfoFile.txt");
     private static HashMap<String, Integer> cardInfo = new HashMap<>();
 
     public static void setCardInfo(HashMap<String, Integer> cardInfo) {

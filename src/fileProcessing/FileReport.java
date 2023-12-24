@@ -13,7 +13,7 @@ public class FileReport {
     private String cardInfoOn;
     private int moneyAmount;
     private int status;
-    File file = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\ReportFile.txt");
+    File file = new File("src/ReportFile.txt");
 
     public void makeFileReport(String filename, String cardInfoFrom, String cardInfoOn, int moneyAmount, String status) throws IOException {
         try (FileWriter fileWriter = new FileWriter(file, true)) {
