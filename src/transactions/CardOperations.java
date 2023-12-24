@@ -9,7 +9,6 @@ import exception.UnsufficientAmountException;
 import fileProcessing.CardInfoFile;
 import fileProcessing.FileReport;
 import fileProcessing.ParseCardInfoFile;
-import fileProcessing.ParseInputFiles;
 
 public class CardOperations {
     //HashMap<String, Integer> cardInfoFrom = ParseInputFiles.getCardInfoFromTr();
@@ -18,22 +17,27 @@ public class CardOperations {
     private FileReport fileReport = new FileReport();
     private CardInfoFile cardInfoFile = new CardInfoFile();
 
-    public void transferMoney(String cardNumberFrom, String cardNumberOn, int moneyAmount) throws IOException {
+    public void transferMoney(String filename, String cardNumberFrom, String cardNumberOn, int moneyAmount) throws IOException {
         try {
             if (moneyAmount > cardInfo.get(cardNumberFrom)) {
-                fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Not enough money.");
+                fileReport.makeFileReport(filename, cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Not enough money.");
                 throw new NotEnoughMoneyException();
             } else if (moneyAmount <= 0) {
-                fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
+                fileReport.makeFileReport(filename,cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
                         "amount of money");
                 throw new UnsufficientAmountException();
             } else if (Objects.equals(cardNumberFrom, cardInfo.keySet().toString())) {
-
             } else {
-                cardInfo.replace(cardNumberFrom, cardInfo.get(cardNumberFrom) - moneyAmount);
-                cardInfo.replace(cardNumberOn, cardInfo.get(cardNumberOn) + moneyAmount);
-                cardInfoFile.cardInfoFileUpdate(cardInfo);
-                fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer completed successfully");
+                try {
+                    cardInfo.replace(cardNumberFrom, cardInfo.get(cardNumberFrom) - moneyAmount);
+                    cardInfo.replace(cardNumberOn, cardInfo.get(cardNumberOn) + moneyAmount);
+                    cardInfoFile.cardInfoFileUpdate(cardInfo);
+                } catch (Exception e) {
+                    System.out.println("Card number mismatch");
+                    fileReport.makeFileReport(filename, cardNumberFrom, cardNumberOn, moneyAmount, "Transfer failed. Invalid card number");
+                    return;
+                }
+                fileReport.makeFileReport(filename, cardNumberFrom, cardNumberOn, moneyAmount, "Transfer completed successfully");
             }
         } catch (NotEnoughMoneyException | UnsufficientAmountException e) {
             System.out.println(e);

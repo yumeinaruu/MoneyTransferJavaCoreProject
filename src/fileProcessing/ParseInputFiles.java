@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import exception.FileDoesNotExistException;
 import transactions.CardOperations;
 
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
@@ -21,6 +22,13 @@ public class ParseInputFiles {
     public void ParseFile() {
         try {
             StringBuilder stringBuilder = new StringBuilder();
+            if (listOfFiles == null) {
+                try {
+                    throw new FileDoesNotExistException();
+                } catch (FileDoesNotExistException e) {
+                    System.out.println(e);
+                }
+            }
             for (File file : listOfFiles) {
                 if (file.isFile() && file.getName().endsWith(".txt")) {
                     FileReader fileReader = new FileReader(file);
@@ -52,14 +60,14 @@ public class ParseInputFiles {
                     try {
                         cardTransferValue.deleteCharAt(0);
                         cardTransferValue.delete(cardTransferValue.length() - 2, cardTransferValue.length());
-                    } catch (Exception e){
+                    } catch (Exception e) {
 
                     }
                     //cardInfoFromTr.put(cardNumberFrom.toString(), Integer.parseInt(cardTransferValue.toString()));
                     //cardInfoOnTr.put(cardNumberOn.toString(), Integer.parseInt(cardTransferValue.toString()));
                     ParseCardInfoFile.parseCardInfoFile();
                     CardOperations cardOperations = new CardOperations();
-                    cardOperations.transferMoney(cardNumberFrom.toString(), cardNumberOn.toString(), Integer.parseInt(cardTransferValue.toString()));
+                    cardOperations.transferMoney(file.toString(), cardNumberFrom.toString(), cardNumberOn.toString(), Integer.parseInt(cardTransferValue.toString()));
                     fileReader.close();
                     stringBuilder.delete(0, stringBuilder.length());
                     cardTransferValue.delete(0, stringBuilder.length());

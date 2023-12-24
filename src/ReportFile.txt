@@ -21,3 +21,36 @@
 2023-12-24T16:28:38.079850900 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
 2023-12-24T16:30:53.950492600 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
 2023-12-24T16:30:53.962531300 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T16:34:34.284460400 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T16:34:34.297459700 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T16:39:06.253360300 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T16:39:06.267357700 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T16:42:20.001778600 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T16:42:20.015133300 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T16:46:00.048369500 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T16:46:00.061506100 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:07:15.144545100 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:07:15.156992900 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:08:01.108895700 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:08:01.121894 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:08:01.122892400 | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer Failed. Not enough money.
+2023-12-24T17:08:52.928014600 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:08:52.941187700 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:11:24.968978800 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:11:24.981584500 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:11:24.982572100 | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number
+2023-12-24T17:13:03.340926900 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:13:03.353924100 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:13:03.354924 | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number
+2023-12-24T17:17:09.880223200 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:17:27.042057800 | transferred from 12345-76845 | transferred to 15674-90875 | 50 | Transfer completed successfully
+2023-12-24T17:17:27.055528200 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:17:27.056012100 | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number
+2023-12-24T17:19:49.800713200 | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:19:49.811751 | transferred from 12345-76845 | transferred to 15674-90875 | -50 | Transfer Failed. Non-sufficient amount of money
+2023-12-24T17:19:49.812750300 | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:19:49.813750100 | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number
+2023-12-24T17:29:15.996110300|C:\Users\Yumeinaruu\IdeaProjects\MoneyTransferProject\src\input\BankCardInputInfoFirst.txt | transferred from 12345-76845 | transferred to 15674-90875 | 100 | Transfer completed successfully
+2023-12-24T17:29:16.009707200|C:\Users\Yumeinaruu\IdeaProjects\MoneyTransferProject\src\input\BankCardInputInfoFourth.txt | transferred from 12345-76845 | transferred to 15674-90875 | -50 | Transfer Failed. Non-sufficient amount of money
+2023-12-24T17:29:16.010868100|C:\Users\Yumeinaruu\IdeaProjects\MoneyTransferProject\src\input\BankCardInputInfoSecond.txt | transferred from 16745-77645 | transferred to 11234-96785 | 150 | Transfer completed successfully
+2023-12-24T17:29:16.011033|C:\Users\Yumeinaruu\IdeaProjects\MoneyTransferProject\src\input\BankCardInputInfoThird.txt | transferred from 16745-77645 | transferred to 11234-96685 | 150 | Transfer failed. Invalid card number

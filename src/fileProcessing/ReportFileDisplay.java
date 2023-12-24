@@ -7,11 +7,12 @@ import java.io.IOException;
 
 public class ReportFileDisplay {
     File file = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\ReportFile.txt");
-    public void showReport(){
-        try(FileReader fileReader = new FileReader(file)) {
+
+    public void showReport() {
+        try (FileReader fileReader = new FileReader(file)) {
             StringBuilder stringBuilder = new StringBuilder();
             int i;
-            while((i = fileReader.read()) != -1){
+            while ((i = fileReader.read()) != -1) {
                 stringBuilder.append((char) i);
             }
             System.out.println(stringBuilder);

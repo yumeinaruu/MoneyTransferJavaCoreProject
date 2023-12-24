@@ -12,7 +12,7 @@ public class Main {
             if (choice == 1) {
                 ParseInputFiles inputFiles = new ParseInputFiles();
                 inputFiles.ParseFile();
-                //inputFiles.moveToArchive();
+                inputFiles.moveToArchive();
             } else if (choice == 2) {
                 ReportFileDisplay reportFileDisplay = new ReportFileDisplay();
                 reportFileDisplay.showReport();
