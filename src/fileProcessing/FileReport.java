@@ -15,12 +15,12 @@ public class FileReport {
     private int status;
     File file = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\ReportFile.txt");
 
-    public void makeFileReport(/*String filename,*/ String cardInfoFrom, String cardInfoOn, int moneyAmount, int status) throws IOException {
-        try(FileWriter fileWriter = new FileWriter(file, true)){
+    public void makeFileReport(/*String filename,*/ String cardInfoFrom, String cardInfoOn, int moneyAmount, String status) throws IOException {
+        try (FileWriter fileWriter = new FileWriter(file, true)) {
             fileWriter.write(LocalDateTime.now() + " | transferred from " + cardInfoFrom
                     + " | transferred to " + cardInfoOn + " | " + moneyAmount
-            + " | " + status + "\n");
-        } catch (Exception e){
+                    + " | " + status + "\n");
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

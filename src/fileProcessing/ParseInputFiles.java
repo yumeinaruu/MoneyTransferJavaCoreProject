@@ -7,14 +7,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 import transactions.CardOperations;
+
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class ParseInputFiles {
     private File folder = new File("C:\\Users\\Yumeinaruu\\IdeaProjects\\MoneyTransferProject\\src\\input");
     private File[] listOfFiles = folder.listFiles();
-   // private static HashMap<String, Integer> cardInfoFromTr = new HashMap<>();
-   // private static HashMap<String, Integer> cardInfoOnTr = new HashMap<>();
+    // private static HashMap<String, Integer> cardInfoFromTr = new HashMap<>();
+    // private static HashMap<String, Integer> cardInfoOnTr = new HashMap<>();
 
     public void ParseFile() {
         try {

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
 
+import exception.NotEnoughMoneyException;
+import exception.UnsufficientAmountException;
 import fileProcessing.CardInfoFile;
 import fileProcessing.FileReport;
 import fileProcessing.ParseCardInfoFile;
@@ -18,17 +20,19 @@ public class CardOperations {
 
     public void transferMoney(String cardNumberFrom, String cardNumberOn, int moneyAmount) throws IOException {
         if (moneyAmount > cardInfo.get(cardNumberFrom)) {
-            System.out.println("Not enough money to make a transaction");
+            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Not enough money.");
+            throw new NotEnoughMoneyException();
         } else if (moneyAmount <= 0) {
-            System.out.println("Cannot transfer a non-sufficient amount of money");
+            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer Failed. Non-sufficient " +
+                    "amount of money");
+            throw new UnsufficientAmountException();
         } else if (Objects.equals(cardNumberFrom, cardInfo.keySet().toString())) {
 
         } else {
             cardInfo.replace(cardNumberFrom, cardInfo.get(cardNumberFrom) - moneyAmount);
             cardInfo.replace(cardNumberOn, cardInfo.get(cardNumberOn) + moneyAmount);
             cardInfoFile.cardInfoFileUpdate(cardInfo);
-            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, 1);//TODO: сделать ошибки
-            //и тип выполение работы вместо статуса
+            fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, "Transfer completed successfully");
         }
     }
 }

@@ -20,7 +20,7 @@ public class ParseCardInfoFile {
 
     public static void parseCardInfoFile() throws FileNotFoundException {
         try (FileReader fileReader = new FileReader(cardInfoFile)) {
-            if(cardInfo.isEmpty()) {
+            if (cardInfo.isEmpty()) {
                 StringBuilder stringBuilder = new StringBuilder();
                 int character;
                 while ((character = fileReader.read()) != -1) {
@@ -52,7 +52,7 @@ public class ParseCardInfoFile {
                     cardInfo.put(cardNumberString[i], Integer.parseInt(cardBalanceString[i]));
                 }
                 System.out.println(cardInfo);
-            } else{
+            } else {
                 System.out.println(cardInfo);
             }
         } catch (IOException e) {
