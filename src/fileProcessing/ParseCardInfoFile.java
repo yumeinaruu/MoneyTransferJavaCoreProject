@@ -1,6 +1,7 @@
 package fileProcessing;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,16 +26,18 @@ public class ParseCardInfoFile {
                 while ((character = fileReader.read()) != -1) {
                     stringBuilder.append((char) character);
                 }
-                Pattern pattern = Pattern.compile("/\\d+\n");
+                stringBuilder.deleteCharAt(0);
+                stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                Pattern pattern = Pattern.compile("=\\d+");
                 Matcher matcher = pattern.matcher(stringBuilder);
                 StringBuilder cardBalanceValue = new StringBuilder();
                 while (matcher.find()) {
                     cardBalanceValue.append(matcher.group());
                 }
                 cardBalanceValue.deleteCharAt(0);
-                cardBalanceValue.deleteCharAt(cardBalanceValue.length() - 1);
-                String[] cardBalanceString = cardBalanceValue.toString().split("\n/");
-                cardBalanceValue.delete(cardBalanceValue.length() - 2, cardBalanceValue.length());
+                //cardBalanceValue.deleteCharAt(cardBalanceValue.length()-1);
+                String[] cardBalanceString = cardBalanceValue.toString().split("=");
+                //cardBalanceValue.delete(cardBalanceValue.length() - 2, cardBalanceValue.length());
                 pattern = Pattern.compile("\\d{5}-\\d{5}");
                 matcher = pattern.matcher(stringBuilder);
                 StringBuilder cardNumber = new StringBuilder();
@@ -44,6 +47,8 @@ public class ParseCardInfoFile {
                 }
                 String[] cardNumberString = cardNumber.toString().split(" ");
                 for (int i = 0; i < cardBalanceString.length; i++) {
+                    cardBalanceString[i] = cardBalanceString[i].replaceAll("=", "");
+                    cardBalanceString[i] = cardBalanceString[i].replaceAll(",", "");
                     cardInfo.put(cardNumberString[i], Integer.parseInt(cardBalanceString[i]));
                 }
                 System.out.println(cardInfo);

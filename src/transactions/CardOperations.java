@@ -26,9 +26,9 @@ public class CardOperations {
         } else {
             cardInfo.replace(cardNumberFrom, cardInfo.get(cardNumberFrom) - moneyAmount);
             cardInfo.replace(cardNumberOn, cardInfo.get(cardNumberOn) + moneyAmount);
-          //  cardInfoFile.cardInfoFileUpdate();
+            cardInfoFile.cardInfoFileUpdate(cardInfo);
             fileReport.makeFileReport(cardNumberFrom, cardNumberOn, moneyAmount, 1);//TODO: сделать ошибки
-            //и типо выполение работы вместо статуса
+            //и тип выполение работы вместо статуса
         }
     }
 }
